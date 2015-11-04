@@ -13,5 +13,6 @@ func Mask(program []byte, nbyte int, mask byte, path string) (err error) {
 	}
 	program[nbyte] ^= mask
 	err = ioutil.WriteFile(path, program, 0777)
+	program[nbyte] ^= mask
 	return
 }
